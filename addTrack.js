@@ -2,6 +2,12 @@
 var track;
 var res;
 var groupName;
+var string = "";
+
+
+/*function message () {
+  $("#list").html(string);
+}*/
 
 var getGroupName = function () {
   groupName = document.getElementById('groupName').value;
@@ -18,8 +24,9 @@ var searchTracks = function () {
         if (response.tracks.items.length) {
         
           track = response.tracks.items[0];
-          document.write(track.id);
-          document.write(groupName);
+          string += track.name + ' by ' + track.artists[0].name + "<br />";
+          document.getElementById('songlist').innerHTML = string;
+         // updateDatabaseWithTrack(track);
       	}
     },
     error: function(response) {
@@ -28,7 +35,7 @@ var searchTracks = function () {
   });
 
   var data = {
-    'room' : groupName
+    'room' : groupName,
     'description' : track.id
   }
 
@@ -49,8 +56,8 @@ var searchTracks = function () {
 
 
 }
-
-
+//$('.list').html(string);
+//document.getElementById("list").value = string;
 // f.addEventListener('submit', function(e) {
 //   alert("1");
 //   e.preventDefault();
