@@ -18,7 +18,6 @@ var searchTracks = function () {
 
   // Query for the data first track related to that name
   $.ajax({
-<<<<<<< HEAD
       method: "GET",
       url: 'https://api.spotify.com/v1/search?type=track&q=' + query +'',
       success: function(response) {	
@@ -30,15 +29,6 @@ var searchTracks = function () {
           document.getElementById('songlist').innerHTML = string;
          // updateDatabaseWithTrack(track);
       	}
-=======
-    method: "GET",
-    url: 'https://api.spotify.com/v1/search?type=track&q=' + query +'',
-    success: function(response) {	
-      res = response;
-      if (response.tracks.items.length) {
-        track = response.tracks.items[0];
-      }
->>>>>>> 902d2be9d06ccc2db10d81a04a430a78f52ef5ed
     },
     error: function(response) {
       console.log(response);
@@ -67,14 +57,3 @@ var searchTracks = function () {
   })
 
 }
-<<<<<<< HEAD
-//$('.list').html(string);
-//document.getElementById("list").value = string;
-// f.addEventListener('submit', function(e) {
-//   alert("1");
-//   e.preventDefault();
-//   alert("1");
-//   searchTracks(document.getElementById('query').value);
-// }, false);
-=======
->>>>>>> 902d2be9d06ccc2db10d81a04a430a78f52ef5ed
