@@ -1,19 +1,25 @@
 <!doctype html>
 <meta charset="utf-8">
 <html lang="en">
-  <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src='js/changepage.js'></script>
+<body>
 
-    <div class="container">
-      <h1>Are you a DJ or a listener?</h1>
-      <!-- <form id="search-form"> -->>
-      <form action="DJLogin.html">
-        <input type="submit" value="DJ" />
-      </form>
-      <form action="JoinGroupListerner.html">
-        <input type="submit" value="Listener" />
-      </form>
-      <div id="results"></div>
-    </div>
+<div class="container">
+  <h1>Are you a DJ or a listener?</h1>
+  <!-- <form id="search-form"> -->
+  <form action="/DJEnter">
+    <input type="submit" value="DJ" />
+  </form>
 
-  </body>
+  <form action="/ListenerEnter">
+    <input type="submit" value="Listener" />
+  </form>
+<!--
+  <button id="dj-entry-button">DJ</button>
+  <button id="listenerentry-button"/>Listener</button> -->
+  <div id="results"></div>
+</div>
+
+</body>
 </html>
