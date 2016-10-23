@@ -1,10 +1,10 @@
 
 var track;
 var res;
+var groupName = document.getElementById('groupName').value;
 
 var searchTracks = function () {
   var query = document.getElementById('query').value;
-  var group_name = document.getElementById('group_name').value;
   // alert("Hello World!");
   $.ajax({
       method: "GET",
@@ -15,7 +15,7 @@ var searchTracks = function () {
         
           track = response.tracks.items[0];
           document.write(track.id);
-          document.write(group_name);
+          document.write(groupName);
       	}
     },
     error: function(response) {
@@ -24,7 +24,7 @@ var searchTracks = function () {
   });
 
   var data = {
-    'room' : group_name
+    'room' : groupName
     'description' : track.id
   }
 
