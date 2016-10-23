@@ -14,7 +14,6 @@ var getGroupName = function () {
 
 var searchTracks = function () {
   var query = document.getElementById('query').value;
-  var group_name = document.getElementById('group_name').value;
 
   // Query for the data first track related to that name
   $.ajax({
