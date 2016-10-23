@@ -1,22 +1,20 @@
 <!doctype html>
+<meta charset="utf-8">
 <html lang="en">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script src="addTrack.js"></script>
 	<body>
 
-		<div class="container">
-			<h1>Type a Song Name</h1>
-			<p>Type in the song you want to request and the group you are currently in, then click Request.</p>
-			<!-- <form id="search-form"> -->
-			<input type="text" id="query" value="" class="form-control" placeholder="Type a Song Name" />
+	<div class="container">
+		<h1>Are you a DJ or a listener?</h1>
+		<!-- <form id="search-form"> -->
+<FORM METHOD="LINK" ACTION="­DJLogin.html">
+<INPUT TYPE="submit" VALUE="DJ">
+</FORM>
+<FORM METHOD="GET" ACTION="­JoinGroupListener.html">
+<INPUT TYPE="submit" VALUE="Listener">
+</FORM>
+		<div id="results"></div>
+	</div>
 
-			<input type="text" id="group_name" value="" class="form-control" placeholder="Type a Group Name" />
-
-			<a href="/add" onclick="searchTracks()" id="search" class="btn btn-primary" value="Request" />	
-			<!-- </form> -->
-			<div id="results"></div>
-		</div>
 	</body>
-</html>
 
+</html>
