@@ -1,6 +1,12 @@
 var track;
 var res;
 var groupName;
+var string = "";
+
+
+/*function message () {
+  $("#list").html(string);
+}*/
 
 var getGroupName = function () {
   groupName = document.getElementById('groupName').value;
@@ -8,17 +14,20 @@ var getGroupName = function () {
 
 var searchTracks = function () {
   var query = document.getElementById('query').value;
-  var group_name = document.getElementById('group_name').value;
 
   // Query for the data first track related to that name
   $.ajax({
-    method: "GET",
-    url: 'https://api.spotify.com/v1/search?type=track&q=' + query +'',
-    success: function(response) {	
-      res = response;
-      if (response.tracks.items.length) {
-        track = response.tracks.items[0];
-      }
+      method: "GET",
+      url: 'https://api.spotify.com/v1/search?type=track&q=' + query +'',
+      success: function(response) {	
+      	res = response;
+        if (response.tracks.items.length) {
+        
+          track = response.tracks.items[0];
+          string += track.name + ' by ' + track.artists[0].name + "<br />";
+          document.getElementById('songlist').innerHTML = string;
+         // updateDatabaseWithTrack(track);
+      	}
     },
     error: function(response) {
       console.log(response);
@@ -27,7 +36,7 @@ var searchTracks = function () {
 
   // Set the data just queried
   var data = {
-    'room' : groupName
+    'room' : groupName,
     'description' : track.id
   }
 
