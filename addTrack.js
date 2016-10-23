@@ -8,7 +8,6 @@ var getGroupName = function () {
 
 var searchTracks = function () {
   var query = document.getElementById('query').value;
-<<<<<<< HEAD
   var group_name = document.getElementById('group_name').value;
 
   // Query for the data first track related to that name
@@ -20,20 +19,6 @@ var searchTracks = function () {
       if (response.tracks.items.length) {
         track = response.tracks.items[0];
       }
-=======
-  // alert("Hello World!");
-  $.ajax({
-      method: "GET",
-      url: 'https://api.spotify.com/v1/search?type=track&q=' + query +'',
-      success: function(response) {	
-      	res = response;
-        if (response.tracks.items.length) {
-        
-          track = response.tracks.items[0];
-          document.write(track.id);
-          document.write(groupName);
-      	}
->>>>>>> 47ab76de567d9ac7cc96e3805777cd2e1ef02e5f
     },
     error: function(response) {
       console.log(response);
