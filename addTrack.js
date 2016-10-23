@@ -1,7 +1,11 @@
 
 var track;
 var res;
-var groupName = document.getElementById('groupName').value;
+var groupName;
+
+var getGroupName = function () {
+  groupName = document.getElementById('groupName').value;
+} 
 
 var searchTracks = function () {
   var query = document.getElementById('query').value;
