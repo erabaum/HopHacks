@@ -86,3 +86,10 @@ var server = app.listen(8081, function () {
   console.log("Example app listening at http://%s:%s", host, port)
 });
 
+app.get('/DJ', function(req, res) {
+  res.sendFile(path.join(__dirname + '/DJLogin.html'));
+});
+
+app.get('/Listener', function(req, res) {
+  res.sendFile(path.join(__dirname + '/JoinGroupListener.html'));
+});
